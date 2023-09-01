@@ -85,7 +85,6 @@ async function deleteEpisodeExercise(client) {
   );
 }
 
-// ...
 
 async function main() {
   if (process.env.MONGODB_URI == null) {
