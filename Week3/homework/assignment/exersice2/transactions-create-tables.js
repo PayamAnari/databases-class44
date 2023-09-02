@@ -9,7 +9,7 @@ const connection = mysql.createConnection({
 
 connection.connect((err) => {
   if (err) {
-    console.log('Error connecting to MySQL server', err);
+    console.error('Error connecting to MySQL server', err);
     return;
   }
   console.log('Connecting to MySQL server');
@@ -35,14 +35,14 @@ connection.connect((err) => {
   `;
   connection.query(createAccountTable, (err1) => {
     if (err1) {
-      console.log('Error creating account table', err1);
+      console.error('Error creating account table', err1);
     } else {
       console.log('Created account table');
     }
 
     connection.query(createAccountChangesTable, (err2) => {
       if (err2) {
-        console.log('Error creating account changes table', err2);
+        console.error('Error creating account changes table', err2);
       } else {
         console.log('Created account_changes table');
       }

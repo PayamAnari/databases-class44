@@ -9,7 +9,7 @@ const connection = mysql.createConnection({
 
 connection.connect((err) => {
   if (err) {
-    console.log('Error connecting to MySQL server', err);
+    console.error('Error connecting to MySQL server', err);
   } else {
     console.log('Connected to MySQL server');
   }
@@ -23,7 +23,7 @@ connection.connect((err) => {
 
   connection.query(insertSampleAccounts, (err1) => {
     if (err1) {
-      console.log('Error inserting sample accounts', err1);
+      console.error('Error inserting sample accounts', err1);
     } else {
       console.log('Inserted sample accounts');
     }
