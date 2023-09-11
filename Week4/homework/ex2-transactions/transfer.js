@@ -1,7 +1,10 @@
 import { MongoClient } from 'mongodb';
+import dotenv from 'dotenv';
 
-const uri =
-  'mongodb+srv://anarip62:iphone3958@cluster0.6xcx6k0.mongodb.net/?retryWrites=true&w=majority';
+dotenv.config();
+
+const uri = process.env.MONGODB_URI;
+
 
 const dbName = 'moneytransfer';
 const collectionName = 'transactions';

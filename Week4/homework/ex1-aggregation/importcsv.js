@@ -2,12 +2,15 @@ import express from 'express';
 import fs from 'fs';
 import csvParser from 'csv-parser';
 import { MongoClient, ObjectId } from 'mongodb';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 const app = express();
 const port = process.env.PORT || 3000;
 
-const uri =
-  'mongodb+srv://anarip62:iphone3958@cluster0.6xcx6k0.mongodb.net/?retryWrites=true&w=majority';
+const uri = process.env.MONGODB_URI;
+
 const csvFilePath = './population_pyramid_1950-2022.csv';
 
 async function importCsvToMongoDB() {
